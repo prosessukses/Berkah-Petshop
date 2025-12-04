@@ -1,0 +1,713 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Arial Bold", "Arial Black", Gadget, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #333;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: transparent;
+  transition: background 0.4s ease, padding 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background: hsla(40, 100%, 50%, 0.94);
+  backdrop-filter: blur(4px);
+  padding: 10px 30px;
+}
+
+/* ===== LOGO ===== */
+.logo img {
+  max-width: 87px;
+  height: auto;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.logo img.shrink {
+  max-width: 55px;
+}
+
+/* ===== NAV LINKS ===== */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-links a.active {
+  background: limegreen;
+  color: #fff;
+}
+
+/* ===== MENU TOGGLE (Mobile) ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== RESPONSIVE NAV ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    left: 0;
+    background: hsla(40, 100%, 50%, 0.94);
+    padding: 20px;
+    border-radius: 12px;
+    gap: 20px;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .logo img {
+    max-width: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    max-width: 55px;
+  }
+
+  .nav-links {
+    top: 60px;
+    padding: 15px;
+  }
+}
+
+/* ================= JUMBOTRON ================= */
+.jumbotron {
+  position: relative;
+  height: 100vh;
+  background: url("jumbotron.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.jumbotron::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.jumbotron-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: fadeDown 1.5s ease-out;
+}
+
+.jumbotron-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  animation: fadeDown 2s ease-out;
+}
+
+.btn-primary {
+  padding: 12px 25px;
+  background: orange;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: limegreen;
+  transform: scale(1.05);
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= PRODUK UNGGULAN ================= */
+.unggulan {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.unggulan h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.unggulan h2::after {
+  content: "";
+  width: 120px;
+  height: 6px;
+  margin: 12px auto 0;
+  border-radius: 3px;
+  background: repeating-radial-gradient(circle, orange 0, orange 4px, transparent 5px, transparent 8px);
+  animation: glowLine 2s infinite alternate;
+  display: block;
+}
+
+@keyframes glowLine {
+  from {
+    opacity: 0.6;
+    transform: scaleX(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1.05);
+  }
+}
+
+.produk-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.produk {
+  position: relative;
+  height: 260px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  transition: 0.4s;
+}
+
+.produk img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.produk:hover img {
+  transform: scale(1.15) rotate(1deg);
+}
+
+.produk h3 {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: bottom 0.5s ease, background 0.3s ease;
+}
+
+.produk:hover h3 {
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* ================= MENU KAMI (Carousel) ================= */
+.menu-produk {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+  position: relative;
+}
+
+.menu-produk h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #222;
+  display: inline-block;
+  position: relative;
+}
+
+.menu-produk h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, orange, limegreen);
+  border-radius: 3px;
+}
+
+.menu-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px;
+  scrollbar-width: none;
+}
+
+.menu-container::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-item {
+  flex: 0 0 250px;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.menu-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px;
+  background: limegreen;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  clip-path: circle(0% at 50% 50%);
+  transform: scale(1.1);
+  will-change: transform;
+}
+
+.menu-item.show img {
+  clip-path: circle(150% at 50% 50%);
+  transform: scale(1);
+}
+
+.menu-item:hover img {
+  transform: scale(1.05);
+}
+
+.menu-caption {
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.menu-price {
+  font-weight: bold;
+  color: #ff6600;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+/* ===== ARROWS ===== */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.arrow.left {
+  left: 20px;
+}
+
+.arrow.right {
+  right: 20px;
+}
+
+/* ===== RESPONSIVE MENU ===== */
+@media (max-width: 768px) {
+  .menu-item {
+    flex: 0 0 200px;
+  }
+
+  .menu-item img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-item {
+    flex: 0 0 160px;
+  }
+
+  .menu-item img {
+    height: 140px;
+  }
+}
+
+/* ================= ABOUT US ================= */
+.about {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+  position: relative;
+}
+
+.about-content h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, orange, limegreen);
+  display: block;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.about-content p {
+  margin-bottom: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.contact-info i {
+  margin-right: 8px;
+  color: limegreen;
+  font-size: 1.1rem;
+}
+
+.ig-link {
+  color: #e1306c;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.ig-link:hover {
+  color: #c13584;
+  text-decoration: underline;
+}
+
+.wa-link {
+  color: #25d366;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.wa-link:hover {
+  color: #128c7e;
+  text-decoration: underline;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: limegreen;
+}
+
+.contact-form button {
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== MAP ===== */
+.map {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+.btn-wa {
+  display: inline-block;
+  margin: 8px 0 15px;
+  padding: 10px 16px;
+  background: #25d366;
+  color: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-wa:hover {
+  background: #128c7e;
+  transform: scale(1.05);
+}
+/* ===== 3D Hover Effect on Menu Item ===== */
+.menu-item {
+  perspective: 1000px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.menu-item:hover {
+  transform: rotateY(8deg) rotateX(6deg) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+/* Overlay effect */
+.menu-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,165,0,0.15), rgba(50,205,50,0.15));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.menu-item:hover::after {
+  opacity: 1;
+}
+
+/* Tambahan interaksi pada gambar */
+.menu-item img {
+  transition: transform 0.6s ease;
+}
+
+.menu-item:hover img {
+  transform: scale(1.1) rotate(-2deg);
+}
+/* ===== ANIMATED ORANGE → GREEN BACKGROUND UNTUK SECTION ===== */
+.unggulan,
+.menu-produk,
+.about,
+.contact {
+  position: relative;
+  background: hsla(40, 100%, 50%, 0.94);
+  background-size: 600% 600%;
+  animation: gradientOrangeGreen 12s ease infinite;
+  padding: 60px 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Animasi gradasi */
+@keyframes gradientOrangeGreen {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Supaya teks kontras di atas gradasi */
+.unggulan h2,
+.menu-produk h2,
+.about h2,
+.contact h2,
+.unggulan p,
+.about p,
+.contact p {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== FIX CAROUSEL BIAR TIDAK NYATU ===== */
+.menu-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 15px;
+  scrollbar-width: none;
+  position: relative;
+  z-index: 2; /* di atas background */
+}
+
+.menu-container::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-item {
+  flex: 0 0 250px; /* ukuran item */
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: hsla(40, 100%, 50%, 0.94);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 0px;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* ===== FINAL FIX: SECTION RAPAT TANPA CELAH DI SUDUT ===== */
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+section {
+  margin: 0 !important;
+  padding: 60px 20px !important; /* sesuaikan jarak isi */
+  border-radius: 0 !important;   /* sudut rata tanpa celah */
+}
+
+section h1,
+section h2,
+section h3,
+section p {
+  margin-top: 0 !important;
+}

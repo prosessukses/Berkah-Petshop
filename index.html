@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berkah Pet Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo Berkah Pet Shop">
+    </div>
+    <nav class="nav-links">
+      <a href="#home" class="active">HOME</a>
+      <a href="#menu">MENU</a>
+      <a href="#about">ABOUT US</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- ===== JUMBOTRON ===== -->
+  <section class="jumbotron" id="home">
+    <div class="jumbotron-content">
+      <h1>SELAMAT DATANG DI BERKAH PET SHOP</h1>
+      <p>Merawat dengan Cinta, Melayani dengan Hati.</p>
+      <a href="#menu" class="btn-primary">Lihat Menu</a>
+    </div>
+  </section>
+
+  <!-- ===== PRODUK UNGGULAN ===== -->
+  <section class="unggulan">
+    <h2>PRODUK UNGGULAN</h2>
+    <div class="produk-container">
+      <div class="produk">
+        <img src="makanan kucing.jpg" alt="Makanan Kucing">
+        <h3>MAKANAN KERING</h3>
+      </div>
+      <div class="produk">
+        <img src="makanan kaleng.jpg" alt="Makanan Kaleng">
+        <h3>MAKANAN BASAH</h3>
+      </div>
+      <div class="produk">
+        <img src="whiskas.jpg" alt="Whiskas">
+        <h3>WHISKAS</h3>
+      </div>
+      <div class="produk">
+        <img src="peralatan.jpg" alt="Peralatan Hewan">
+        <h3>PERALATAN HEWAN</h3>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== MENU KAMI ===== -->
+<section class="menu-produk" id="menu">
+  <h2>MENU KAMI</h2>
+  <button class="arrow left" onclick="scrollMenu(-1)">&#10094;</button>
+  <button class="arrow right" onclick="scrollMenu(1)">&#10095;</button>
+
+  <div class="menu-container" id="carousel">
+    <!-- LifeCat Kaleng -->
+    <div class="menu-item">
+      <div class="menu-title">LifeCat Kaleng</div>
+      <img src="produk1.jpg" alt="LifeCat Kaleng">
+      <div class="menu-caption">Makanan kucing basah varian Tuna, Salmon, Beef, Chicken.</div>
+      <div class="menu-price">Rp 16.000</div>
+      <a href="https://wa.me/6281322456819?text=Halo%20Berkah%20Pet%20Shop,%20saya%20mau%20pesan%20LifeCat%20Kaleng" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Pesan via WA
+      </a>
+    </div>
+
+    <!-- Whiskas Junior -->
+    <div class="menu-item">
+      <div class="menu-title">Whiskas Junior</div>
+      <img src="produk2.jpg" alt="Whiskas Junior">
+      <div class="menu-caption">Makanan anak kucing 2-12 bulan, kaya nutrisi untuk tumbuh sehat.</div>
+      <div class="menu-price">Rp 35.000</div>
+      <a href="https://wa.me/6281322456819?text=Halo%20Berkah%20Pet%20Shop,%20saya%20mau%20pesan%20Whiskas%20Junior" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Pesan via WA
+      </a>
+    </div>
+
+    <!-- Grooming -->
+    <div class="menu-item">
+      <div class="menu-title">Grooming</div>
+      <img src="produk5.png" alt="Grooming">
+      <div class="menu-caption">Perawatan bulu agar kucing lebih bersih, sehat, dan nyaman.</div>
+      <div class="menu-price">Rp 50.000</div>
+      <a href="https://wa.me/6281322456819?text=Halo%20Berkah%20Pet%20Shop,%20saya%20mau%20pesan%20layanan%20Grooming" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Pesan via WA
+      </a>
+    </div>
+
+    <!-- Furlove Tuna -->
+    <div class="menu-item">
+      <div class="menu-title">Furlove Tuna</div>
+      <img src="produk3.jpg" alt="Furlove Tuna">
+      <div class="menu-caption">Makanan kucing rasa tuna, bebas babi, nutrisi lengkap.</div>
+      <div class="menu-price">Rp 26.000</div>
+      <a href="https://wa.me/6281322456819?text=Halo%20Berkah%20Pet%20Shop,%20saya%20mau%20pesan%20Furlove%20Tuna" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Pesan via WA
+      </a>
+    </div>
+
+    <!-- Makanan Curah -->
+    <div class="menu-item">
+      <div class="menu-title">Makanan Curah</div>
+      <img src="produk4.jpg" alt="Makanan Curah">
+      <div class="menu-caption">Makanan kering ekonomis, dikemas per kilo, nutrisi dasar harian.</div>
+      <div class="menu-price">Rp 25.000</div>
+      <a href="https://wa.me/6281322456819?text=Halo%20Berkah%20Pet%20Shop,%20saya%20mau%20pesan%20Makanan%20Curah" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Pesan via WA
+      </a>
+    </div>
+
+    <!-- Pasir Kucing -->
+    <div class="menu-item">
+      <div class="menu-title">Bolt</div>
+      <img src="makanan kucing.jpg" alt="Pasir Kucing">
+      <div class="menu-caption">Memenuhi nutrisi standar profil nutrisi makan kucing yang disah kan oleh AAFO (Association of America feed comtrol official.</div>
+      <div class="menu-price">Rp 20.000</div>
+      <a href="https://wa.me/6281322456819?text=Halo%20Berkah%20Pet%20Shop,%20saya%20mau%20pesan%20Pasir%20Kucing" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Pesan via WA
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-title">Peralatan</div>
+      <img src="peralatan.jpg" alt="Vitamin Kucing">
+      <div class="menu-caption">Untuk kebutuhan kucing.</div>
+      <div class="menu-price">Rp 7.000-45.000</div>
+      <a href="https://wa.me/6281322456819?text=Halo%20Berkah%20Pet%20Shop,%20saya%20mau%20pesan%20Vitamin%20Kucing" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Pesan via WA
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-title"> Furlove Smooth Jelly</div>
+      <img src="makanan kaleng.jpg" alt="Kandang Portable">
+      <div class="menu-caption">Menjaga hidrasi kucing.
+      Meningkatkan nafsu makan.
+      Sumber protein hewani</div>
+      <div class="menu-price">Rp 20.000</div>
+      <a href="https://wa.me/6281322456819?text=Halo%20Berkah%20Pet%20Shop,%20saya%20mau%20pesan%20Kandang%20Portable" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Pesan via WA
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== ABOUT US ===== -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-img">
+        <img src="pemilik toko.jpg" alt="Tentang Berkah Pet Shop">
+      </div>
+      <div class="about-content">
+        <h2>TENTANG KAMI</h2>
+        <p>Nama owner: Choirul anam</p>
+        <p>
+          Berkah Pet Shop hadir untuk menjadi sahabat terbaik pecinta hewan. 
+          Kami menyediakan makanan, perlengkapan, hingga layanan grooming dengan harga terjangkau 
+          namun tetap mengutamakan kualitas. 
+        </p>
+        <p>
+          Visi kami adalah membantu para pecinta hewan dalam merawat peliharaannya 
+          dengan penuh cinta, sehingga hewan kesayangan selalu sehat, bahagia, dan nyaman.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <h2>KONTAK KAMI</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <strong>Alamat:</strong> Jl. Citunjung RT03/RW03, BATUJAJAR TIMUR
+        </p>
+        <p>
+          <i class="fab fa-whatsapp"></i>
+          <strong>WhatsApp:</strong>
+          <a href="https://wa.me/6281322456819" target="_blank" class="wa-link">
+            0813-2245-6819
+          </a>
+        </p>
+        <p>
+          <i class="fab fa-instagram"></i>
+          <strong>Instagram:</strong>
+          <a href="https://www.instagram.com/berkahpetshop" target="_blank" class="ig-link">
+            @berkahpetshop
+          </a>
+        </p>
+        <p>
+          <i class="fas fa-clock"></i>
+          <strong>Jam Buka:</strong> 09.00 - 21.00 WIB
+        </p>
+
+        <!-- Google Maps -->
+        <div class="map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63377.5793143893!2d107.44797736489689!3d-6.87877683864965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e5fbb7e3f03d%3A0x60950babfb4f14b8!2sBERKAH%20PETSHOP%20CITUNJUNG%20BATUJAJAR!5e0!3m2!1sid!2sid!4v1758598646488!5m2!1sid!2sid" 
+            width="100%" 
+            height="250" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Berkah PetShop. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    // Toggle menu mobile
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+      document.querySelector(".menu-toggle").classList.toggle("active");
+    }
+
+    // Active link
+    const navLinks = document.querySelectorAll(".nav-links a");
+    navLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        navLinks.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+        document.querySelector(".nav-links").classList.remove("active");
+        document.querySelector(".menu-toggle").classList.remove("active");
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      const logo = document.querySelector(".logo img");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+        logo.classList.add("shrink");
+      } else {
+        navbar.classList.remove("scrolled");
+        logo.classList.remove("shrink");
+      }
+    });
+
+    // Animasi menu
+    const menuItems = document.querySelectorAll(".menu-item");
+    function checkMenuAnimation() {
+      const triggerBottom = window.innerHeight * 0.9;
+      menuItems.forEach((item, i) => {
+        const boxTop = item.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          setTimeout(() => item.classList.add("show"), i * 150);
+        }
+      });
+    }
+    window.addEventListener("scroll", checkMenuAnimation);
+    window.addEventListener("load", checkMenuAnimation);
+
+    // Scroll carousel
+    function scrollMenu(direction) {
+      const carousel = document.getElementById("carousel");
+      const itemWidth = carousel.querySelector(".menu-item").offsetWidth + 20;
+      carousel.scrollBy({ left: direction * itemWidth, behavior: "smooth" });
+    }
+    
+  </script>
+</body>
+</html>
